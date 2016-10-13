@@ -1,0 +1,10 @@
+*.json
+*.log
+*.txt
+*.md
+
+cover/
+coverage/
+npm-debug.log
+deps/
+node_modules/
