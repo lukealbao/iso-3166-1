@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --harmony test/spec.js",
-    "pretest": "eslint --fix ."
+    "pretest": "eslint --fix .",
+    "benchmark": "node test/benchmark.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "benchmark": "^2.1.1",
     "chai": "^3.5.0",
     "eslint": "^3.7.1",
     "mocha": "^3.1.2"
