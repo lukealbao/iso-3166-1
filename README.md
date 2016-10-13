@@ -26,9 +26,9 @@ search through all the countries. In the worst case scenario, you can
 expect 20k-30k ops/second.
 
 ```
-iso36601.name(894) x 32,301 ops/sec ±3.59% (76 runs sampled)
-iso36601.name("ZM") x 14,111 ops/sec ±3.37% (78 runs sampled)
-iso36601.name("Zambia") x 12,585 ops/sec ±3.07% (79 runs sampled)
+iso31661.name(894) x 41,279,429 ops/sec ±3.22% (75 runs sampled)
+iso31661.name("ZM") x 35,323,443 ops/sec ±2.90% (75 runs sampled)
+iso31661.name("Zambia") x 19,911,280 ops/sec ±3.03% (73 runs sampled)
 ```
 
 
