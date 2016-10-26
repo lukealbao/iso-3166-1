@@ -111,3 +111,33 @@ describe('iso31661.numeric()', function () {
        });
   });
 });
+
+describe('Undefined input', function () {
+  it('iso31661.name() returns |undefined| if no value is found', function () {
+    var value = iso31661.name('Genovia');
+    expect(value).to.equal(undefined);
+  });
+
+  it('iso31661.numeric() returns |undefined| if no value is found', function () {
+    var value = iso31661.numeric(999);
+    expect(value).to.equal(undefined);
+  });
+
+  it('iso31661.alpha2() returns |undefined| if no value is found', function () {
+    var value = iso31661.alpha2('ZZ');
+    expect(value).to.equal(undefined);
+  });
+
+  it('iso31661.alpha3() returns |undefined| if no value is found', function () {
+    var value = iso31661.alpha3('ZZZ');
+    expect(value).to.equal(undefined);
+  });
+
+  it('All methods return |undefined| upon receiving undefined input',
+     function () {
+       expect(iso31661.alpha2()).to.equal(undefined);
+       expect(iso31661.alpha3()).to.equal(undefined);
+       expect(iso31661.name()).to.equal(undefined);
+       expect(iso31661.numeric()).to.equal(undefined);
+     });
+});

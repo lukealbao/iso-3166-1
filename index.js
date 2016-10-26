@@ -6,10 +6,10 @@ var path = require('path');
 var index = require(path.resolve(__dirname, 'src/', 'index.json'));
 
 module.exports = {
-  numeric: function (input) { return map[input].numeric; },
-  alpha2: function (input) { return map[input].alpha2; },
-  alpha3: function (input) { return map[input].alpha3; },
-  name: function (input) { return map[input].name; }
+  numeric: function (input) { return map[input] && map[input].numeric; },
+  alpha2: function (input) { return map[input] && map[input].alpha2; },
+  alpha3: function (input) { return map[input] && map[input].alpha3; },
+  name: function (input) { return map[input] && map[input].name; }
 };
 
 var map = {};
