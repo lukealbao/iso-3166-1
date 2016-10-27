@@ -93,7 +93,8 @@ describe('iso31661.numeric()', function () {
   });
 
   ['alpha2', 'alpha3', 'name', 'numeric'].forEach(function (lookupType) {
-    it('Returns an numeric code for all entries using ' + lookupType + ' input',
+    it('Returns a stringified numeric code for all entries using ' + lookupType
+      + ' input',
        function () {
          iso31661.index.forEach(function (country) {
            var number = iso31661.numeric(country[lookupType]);
@@ -104,7 +105,7 @@ describe('iso31661.numeric()', function () {
              return;
            }
 
-           expect(number).to.be.a('number');
+           expect(number).to.be.a('string');
            expect(number).to.be.above(0);
            expect(number).not.to.equal(NaN);
          });
