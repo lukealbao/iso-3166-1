@@ -33,6 +33,7 @@ var index = source.map(function (entry) {
               iso3166.alpha2 = entry['ISO3166-1-Alpha-2'];
               iso3166.alpha3 = entry['ISO3166-1-Alpha-3'];
               iso3166.numeric = entry['ISO3166-1-numeric'];
+              iso3166.currency = entry['ISO4217-currency_numeric_code'];
               
               return iso3166;
             }).filter(function (country) {

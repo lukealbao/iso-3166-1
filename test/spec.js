@@ -113,6 +113,38 @@ describe('iso31661.numeric()', function () {
   });
 });
 
+describe('iso31661.currency()', function () {
+  var undefinedCurrency = [];
+  after(function () {
+    console.warn('   -!- %d countries have undefined currency codes',
+                 undefinedCurrency.length);
+  });
+
+  ['alpha2', 'alpha3', 'name', 'numeric'].forEach(function (lookupType) {
+    it('Returns a stringified currency code for all entries using ' + lookupType
+      + ' input',
+       function () {
+         iso31661.index.forEach(function (country) {
+           var number = iso31661.currency(country[lookupType]);
+           if (!number) {
+             // Antarctica et al. do not have currency codes. We want them
+             // to be undefined though, not empty strings as they are in the
+             // src.
+             expect(number).to.equal(undefined);
+             if (undefinedCurrency.indexOf(country) < 0) {
+               undefinedCurrency.push(country);
+             }
+             return;
+           }
+
+           expect(number).to.be.a('string');
+           expect(number).to.be.above(0);
+           expect(number).not.to.equal(NaN);
+         });
+       });
+  });
+});
+
 describe('Undefined input', function () {
   it('iso31661.name() returns |undefined| if no value is found', function () {
     var value = iso31661.name('Genovia');
@@ -134,11 +166,18 @@ describe('Undefined input', function () {
     expect(value).to.equal(undefined);
   });
 
+  it('iso31661.currency() returns |undefined| if no value is found',
+     function () {
+       var value = iso31661.currency('ZZZ');
+       expect(value).to.equal(undefined);
+     });
+
   it('All methods return |undefined| upon receiving undefined input',
      function () {
        expect(iso31661.alpha2()).to.equal(undefined);
        expect(iso31661.alpha3()).to.equal(undefined);
        expect(iso31661.name()).to.equal(undefined);
        expect(iso31661.numeric()).to.equal(undefined);
+       expect(iso31661.currency()).to.equal(undefined);
      });
 });
