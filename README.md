@@ -21,7 +21,7 @@ return `undefined`. `numeric` and `currency` calls will return
 Strings, because there exist 0-padded codes.
 
 ```javascript
-iso3166.name('JP); // -> "Japan"
+iso3166.name('JP'); // -> "Japan"
 iso3166.alpha2('Japan'); // -> "JP"
 iso3166.alpha3('392'); // -> "JPN"
 iso3166.numeric('JP'); // -> "392"
