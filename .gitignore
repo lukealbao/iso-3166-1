@@ -10,3 +10,4 @@ log/app.log
 env.sh
 org/
 *.tap
+.nyc_output/ .eslintignore

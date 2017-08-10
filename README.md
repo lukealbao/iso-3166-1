@@ -1,4 +1,6 @@
 # ISO 3166-1 Conversions
+[![Build Status](https://travis-ci.org/lukealbao/iso-3166-1.svg?branch=master)](https://travis-ci.org/lukealbao/iso-3166-1) [![Coverage Status](https://coveralls.io/repos/github/lukealbao/iso-3166-1/badge.svg?branch=master)](https://coveralls.io/github/lukealbao/iso-3166-1?branch=master) 
+
 Currently supports a list of 249 countries.
 
 ## Why For?
